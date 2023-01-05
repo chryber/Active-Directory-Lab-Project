@@ -34,8 +34,11 @@ I have been interested in Microsoft's Active Direct service for sometime. Just a
  ![image](https://user-images.githubusercontent.com/121698544/210189019-e6a3ed40-b026-4458-88bb-f11f0ec41ee6.png)
  ![image](https://user-images.githubusercontent.com/121698544/210189049-310bc5c8-f927-46d2-9180-40a4f5674c91.png)
  
-- Step 6: Click the Server 2019 VM and click Start.
+- Step 6: Click the Server 2019 VM and click Start. Proceed through installation. Create a username and password for login. For the Operating System selection, select "Windows Server 2019 Evaluation Desktop Experience" and select Custom install for the type of installation. Installation will take a few minutes.
  ![Win2019serverinstall](https://user-images.githubusercontent.com/121698544/210189133-489af2a1-3d8f-4283-af73-80be32339abb.png)
+
+- Step 7: Since CTRL + ALT + Delete will actually toggle your host device's option, you will need to use the Input < Keyboard option within VirtualBox itself to toggle the VM's option.
+![Win2019unlock](https://user-images.githubusercontent.com/121698544/210697752-cf56a4fd-b50d-47d1-82a5-5f21c3f0228b.png)
 
 
 
