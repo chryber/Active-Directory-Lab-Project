@@ -27,8 +27,10 @@ I have been interested in Microsoft's Active Direct service for sometime. Just a
 - Step 3: Open VirtualBox and click "New" to create a new Virtual Machine (VM). Name as you like but select the Type and Version as shown in below image. I recommend setting the RAM to 2048 MB for better performance but you may keep the default memory size if you are unsure. Click Next < Create < Next < Next < Create (use recommended hard disk size) to create the VM instance.
   ![image](https://user-images.githubusercontent.com/121698544/210188488-81c91803-3028-4c84-8e8d-4a61e33917aa.png)
   
-- Step 4: Click Settings in Virtual Box. In settings, go to Advanced within the General tab and set Shared Clipboard and Drag'n'Drop options to Bidirectional to allow copy/paste between your host system and the Virtual Machine.
+- Step 4: Click Settings in Virtual Box. In settings, go to Advanced within the General tab and set Shared Clipboard and Drag'n'Drop options to Bidirectional to allow copy/paste between your host system and the Virtual Machine. Also select the Network tab and enable Nework Adapter for Adapters 1 and 2. For Adapter 1 select 'NAT' and for Adapater 2 'Internal Network'. This will allow internet connectivity and connectivity between devices in the domain.
 ![image](https://user-images.githubusercontent.com/121698544/210188941-82b081db-9c5a-40f3-8992-877c7fb061c2.png)
+![Recording 2023-01-05 at 20 44 16](https://user-images.githubusercontent.com/121698544/210919095-b0d03244-a62f-4bab-8426-30559e8b8095.gif)
+
 
 - Step 5: Click the Storage option. Click the Adds Optical Drive option. If the ISO file that was downloaded is not listed, click the Add Disk Image to find and open the file. I have already added the file to my VM instance so it is already selected within the image.
  ![image](https://user-images.githubusercontent.com/121698544/210189019-e6a3ed40-b026-4458-88bb-f11f0ec41ee6.png)
@@ -40,7 +42,32 @@ I have been interested in Microsoft's Active Direct service for sometime. Just a
 - Step 7: Since CTRL + ALT + Delete will actually toggle your host device's option, you will need to use the Input < Keyboard option within VirtualBox itself to toggle the VM's option.
 ![Win2019unlock](https://user-images.githubusercontent.com/121698544/210697752-cf56a4fd-b50d-47d1-82a5-5f21c3f0228b.png)
 
+-  Step 8: Once logged, open Network settings and Change Adapter options. Renaming them is the next step as it will be important later on. To tell which ethernet connection is connected to the internet and which is the internal network, Right-Click each < Status < Details. If the IPv4 address begins with "169" this is an APIPA address meaning this connection does not have internet access thus it is the internal network. Rename both connections to differentiate one as internet and one as internal.
+![Win2019servernetworks](https://user-images.githubusercontent.com/121698544/210922263-54002d46-b233-468e-a801-621470e624e4.png)
 
+- Step 9: Next, Right-Click the internal network again and select Properties. Select the Internet Protocol 4 (TCP/IP) option then Properties. Without going too much into IP addressing, addresses from 172.16.0.0 to 172.31.255.255 are considered private IP addresses meaning that they are non internet facing and used for internal networks. In this case, I used IP address 172.16.0.1 and subnet mask of 255.255.255.0. Skip default address and enter the loopback address of 127.0.0.1 for the DNS server option because the server itself is it's own DNS.
+![IP addressing](https://user-images.githubusercontent.com/121698544/210924475-28cb26f7-af94-4a15-8d79-51462610c2fb.gif)
+
+- Step 10: Time to install AD Domain Services. Use the Add Roles and Features as such below to install. I already have it installed.
+![Install AD DS](https://user-images.githubusercontent.com/121698544/210926065-b63d68ec-40e3-48cb-91f2-a07168d7eaa9.gif)
+
+- Step 11: Next, we will need to promote the server to a DC. Click the Notifications icon at the upper right hand corner of the Server Manager (flag) and select 'Promote this Server to a Domain Controller'. Click Add new forest and name the domain. For ex. Mine is called myfirstdomain.com. Proceed and enter a password. Click the Next buttons to finish the process. The server will restart after. Login will now show the domain name/admin name. 
+
+- Step 12: Next, we will proceed in creating our first OU (organizational unit) and object(user) using Active Directory Users and Computer. After adding the new user as a member of the Admin group, log out of the admin profile and login using the user's credentials that was created to test.
+![Creating user](https://user-images.githubusercontent.com/121698544/210932127-d5bd3110-da52-4627-b9a5-346b811949cc.gif)
+
+![adding to admin group](https://user-images.githubusercontent.com/121698544/210932820-5381833e-c237-4b4c-9263-6af7bdcfb00d.gif)
+
+
+- Step 13: Next, installing Remote Access feature which is actually setting up routing to allow the client to access the internet through the DC but with a connection similar to a Virtual Private Network. Click Add roles and features and click Next until you get to the Server Roles screen. Select Remote Access. Click Next until you get to Role Services. Select Routing < Add Features and then click proceed to finish installation.
+
+- Step 14: Click Tools < Routing and Access. Right-Click the DC (local) option then Configure and Enable Routing and Remote Access. After the congifuration wizard screen opens, click Next, select the NAT option. If the 2 connections does not show up after, close the wizard and try again. If they appear, select the internet facing connection (we see why differentiating is important here) and proceed through the remaining steps.
+
+![image](https://user-images.githubusercontent.com/121698544/210935112-c9925686-977a-4f96-876a-bd84621e1ee9.png)
+
+- Step 15: Return to Add roles and features and this time select DHCP Server within Server Roles and continue through installation. The DHCP server is what will provide the windows 10 client with an IP address to access the internet once it joins the domain.
+
+- Step 16: Return to Tools and select DHCP. Click the domain which should show the IPv4 and IPv6 DHCP server options. Right-Click the IPv4 option and select New Scope. Name the scope as you would like and proceed. I set the scope to 
 
 <br />
 <br />
