@@ -81,7 +81,7 @@ I have been interested in Microsoft's Active Direct service for sometime. Just a
 - Step 19: Now to add Windows client. In VirtualBox, click New and name  as needed. Select Windows for the type if not selected and Windows 64-bit. If your computer is not high in memory, I recommend setting memory size to 2048 MB. Proceed through the installation. Set settings as such below. Be sure to add the ISO image. I have done so below.
 ![Win10settings](https://user-images.githubusercontent.com/121698544/211157980-8b88f1fe-169b-45fd-9e6c-df60f7c3fd4e.gif)
 
-
+- Step 20: In VirtualBox, click the Start button to begin Windows 10 installation. Proceed through installation selecting "I dont have a product key" on Activation page and select Windows 10 Pro when prompted to select Operating System. Select. Custom install and proceed through installation. Select "I dont have internet" when prompted to choose a network and "Continue with Limited setup" when prompted to connect your MS account. Enter a name of the user of the computer and the password.
 
 
 
