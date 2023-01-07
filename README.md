@@ -71,7 +71,10 @@ I have been interested in Microsoft's Active Direct service for sometime. Just a
 ![Win2019IPranges](https://user-images.githubusercontent.com/121698544/211154360-dfa9f2a5-b9f6-4861-b171-0ab099ef8b16.png)
 ![Win2019IPranges-2](https://user-images.githubusercontent.com/121698544/211154398-c11e1584-bbd1-4ea2-a42d-6b416c89a543.png)
 
-Step 17: 
+Step 17: The next step involves creating fake users and adding them them to AD. Youtuber Jason Madakor has created a nice powershell script and user.txt file which simplifies this process. His file with both the script and .txt file can be downloaded via https://github.com/joshmadakor1/AD_PS/archive/refs/heads/master.zip but this requires turning off a security feature for Internet Explorer within Server Manager to allow the download. In Server Manager, click Configure this local server then click the ON switch next to IE Enhanced Security Configuration. After, open Internet Explorer copy-paste the link to download the file. Open the file to extract.
+![CreateUserscript](https://user-images.githubusercontent.com/121698544/211156679-085fa3e7-1b9b-458c-81fc-26df62773e3a.gif)
+
+Step 18: 
 
 <br />
 <br />
