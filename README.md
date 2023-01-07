@@ -83,7 +83,7 @@ I have been interested in Microsoft's Active Direct service for sometime. Just a
 
 - Step 20: In VirtualBox, click the Start button to begin Windows 10 installation. Proceed through installation selecting "I dont have a product key" on Activation page and select Windows 10 Pro when prompted to select Operating System. Select. Custom install and proceed through installation. Select "I dont have internet" when prompted to choose a network and "Continue with Limited setup" when prompted to connect your MS account. Enter a name of the user of the computer and the password.
 
-
+- Step 21: 
 
 
 <br />
