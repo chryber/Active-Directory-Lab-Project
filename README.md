@@ -83,8 +83,11 @@ I have been interested in Microsoft's Active Direct service for sometime. Just a
 
 - Step 20: In VirtualBox, click the Start button to begin Windows 10 installation. Proceed through installation selecting "I dont have a product key" on Activation page and select Windows 10 Pro when prompted to select Operating System. Select. Custom install and proceed through installation. Select "I dont have internet" when prompted to choose a network and "Continue with Limited setup" when prompted to connect your MS account. Enter a name of the user of the computer and the password.
 
-- Step 21: Next, we see that the Windows Client is connected to the internal network by going to the CLI and using command 'ipconfig'. If the default gateway is not set, use 'ipconfig renew'.
+- Step 21: Next, we see that the Windows Client is connected to the internal network by going to the CLI and using command 'ipconfig'. If the default gateway is not set, use 'ipconfig renew'. Using the 'ping 8.8.8.8' and 'ping *enter domain name here*' command is also useful to confirm if the device can connect to the internet and also that it is connected to your domain.
+![WinclientIP](https://user-images.githubusercontent.com/121698544/211158850-3022d4bb-5e57-4545-8dfd-fa1eac626c1f.gif)
 
+- Step 22: You may want to change the name of the client. This can be done via Start < System < Rename this device (advanced). The most important process on this page is adding the client a member of the domain. Click Change after which you can change the name of the client. To join domain click Member of Domain < Enter domain name < Enter the DC admin account login that you created < Restart. In the Server Manager
 
+- Step 23: 
 <br />
 <br />
