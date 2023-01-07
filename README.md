@@ -78,7 +78,12 @@ I have been interested in Microsoft's Active Direct service for sometime. Just a
 ![Powershell](https://user-images.githubusercontent.com/121698544/211157337-3e9012e2-c71f-49e8-bb51-1f5838c82538.gif)
 ![Win2019usercreation](https://user-images.githubusercontent.com/121698544/211157371-6721b4f9-45c4-48f7-86b4-70a51ce0d9ed.png)
 
-- Step 19: 
+- Step 19: Now to add Windows client. In VirtualBox, click New and name  as needed. Select Windows for the type if not selected and Windows 64-bit. If your computer is not high in memory, I recommend setting memory size to 2048 MB. Proceed through the installation. Set settings as such below. Be sure to add the ISO image. I have done so below.
+![Win10settings](https://user-images.githubusercontent.com/121698544/211157980-8b88f1fe-169b-45fd-9e6c-df60f7c3fd4e.gif)
+
+
+
+
 
 
 <br />
