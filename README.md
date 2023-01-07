@@ -67,7 +67,11 @@ I have been interested in Microsoft's Active Direct service for sometime. Just a
 
 - Step 15: Return to Add roles and features and this time select DHCP Server within Server Roles and continue through installation. The DHCP server is what will provide the windows 10 client with an IP address to access the internet once it joins the domain.
 
-- Step 16: Return to Tools and select DHCP. Click the domain which should show the IPv4 and IPv6 DHCP server options. Right-Click the IPv4 option and select New Scope. Name the scope as you would like and proceed. I set the scope to
+- Step 16: Return to Tools and select DHCP. Click the domain which should show the IPv4 and IPv6 DHCP server options. Right-Click the IPv4 option and select New Scope. Name the scope as you would like and proceed. I set the Start IP address to 172.16.0.100 and the End IP address to 172.16.0.200 so that any client that joins the domain will be assigned an IP address within that range. We will see this happen when the Windows 10 client joins the domain. Set the subnet mask to 255.255.255.0. On the Lease Duration page, set it to any number of days. This is the amount of time the client device will utilize the IP address received. Proceed through installation confirming 'Yes' to configure DHCP options until you arrive at the Router page. On the Router page, add 172.16.0.1 as the default gatway and be sure to click Add. After, Right-Click the domain and select Authorize then Right-Click again and select Refresh to update the DHCP servers. 
+![Win2019IPranges](https://user-images.githubusercontent.com/121698544/211154360-dfa9f2a5-b9f6-4861-b171-0ab099ef8b16.png)
+![Win2019IPranges-2](https://user-images.githubusercontent.com/121698544/211154398-c11e1584-bbd1-4ea2-a42d-6b416c89a543.png)
+
+Step 17: 
 
 <br />
 <br />
