@@ -86,8 +86,23 @@ I have been interested in Microsoft's Active Direct service for sometime. Just a
 - Step 21: Next, we see that the Windows Client is connected to the internal network by going to the CLI and using command 'ipconfig'. If the default gateway is not set, use 'ipconfig renew'. Using the 'ping 8.8.8.8' and 'ping *enter domain name here*' command is also useful to confirm if the device can connect to the internet and also that it is connected to your domain.
 ![WinclientIP](https://user-images.githubusercontent.com/121698544/211158850-3022d4bb-5e57-4545-8dfd-fa1eac626c1f.gif)
 
-- Step 22: You may want to change the name of the client. This can be done via Start < System < Rename this device (advanced). The most important process on this page is adding the client a member of the domain. Click Change after which you can change the name of the client. To join domain click Member of Domain < Enter domain name < Enter the DC admin account login that you created < Restart. In the Server Manager
+- Step 22: You may want to change the name of the client. This can be done via Start < System < Rename this device (advanced). The most important process on this page is adding the client a member of the domain. Click Change after which you can change the name of the client. To join domain click Member of Domain < Enter domain name < Enter the DC admin account login that you created < Restart. Check Users and Computers as well as DHCP tools in the Server Manager of Server 2019 VM to confirm that the client has been added tot the domain.
+![Clientadd](https://user-images.githubusercontent.com/121698544/211159477-a987aeea-51da-42a6-a686-8f4e4749e8ca.gif)
 
-- Step 23: 
+- Step 23: Try logging into the Windows client with one of the created user accounts from the script. The login screen will now display the domain name as well.
+![win2019userlogintest](https://user-images.githubusercontent.com/121698544/211159520-4222a05d-bdf7-4b27-a366-2b9c21c9b820.png)
+
+<b>That's it!</b>
+
+Additional: I messed around with AD and made the DHCP Reservation set up in which the IP address given to the client will be permanently assigned to the client anytime the VM is activated. This was done by going into the Server Manager Tools < DHCP < IPv4 < Right Click device IP address < DHCP Reservation. 
+![Win2019DHCPres](https://user-images.githubusercontent.com/121698544/211159620-6e236eec-1de4-4d8a-a2f9-615b13641fde.png)
+
+Clicked around and found account controls for users!
+![win2019pwrdreset](https://user-images.githubusercontent.com/121698544/211159700-98047b91-da41-4b44-8532-bebcf72fb446.png)
+
+
+
+
+
 <br />
 <br />
