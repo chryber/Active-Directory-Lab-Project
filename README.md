@@ -67,7 +67,7 @@ I have been interested in Microsoft's Active Direct service for sometime. Just a
 
 - Step 15: Return to Add roles and features and this time select DHCP Server within Server Roles and continue through installation. The DHCP server is what will provide the windows 10 client with an IP address to access the internet once it joins the domain.
 
-- Step 16: Return to Tools and select DHCP. Click the domain which should show the IPv4 and IPv6 DHCP server options. Right-Click the IPv4 option and select New Scope. Name the scope as you would like and proceed. I set the scope to 
+- Step 16: Return to Tools and select DHCP. Click the domain which should show the IPv4 and IPv6 DHCP server options. Right-Click the IPv4 option and select New Scope. Name the scope as you would like and proceed. I set the scope to
 
 <br />
 <br />
