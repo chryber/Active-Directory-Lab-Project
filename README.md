@@ -74,7 +74,11 @@ I have been interested in Microsoft's Active Direct service for sometime. Just a
 Step 17: The next step involves creating fake users and adding them them to AD. Youtuber Jason Madakor has created a nice powershell script and user.txt file which simplifies this process. His file with both the script and .txt file can be downloaded via https://github.com/joshmadakor1/AD_PS/archive/refs/heads/master.zip but this requires turning off a security feature for Internet Explorer within Server Manager to allow the download. In Server Manager, click Configure this local server then click the ON switch next to IE Enhanced Security Configuration. After, open Internet Explorer copy-paste the link to download the file. Open the file to extract.
 ![CreateUserscript](https://user-images.githubusercontent.com/121698544/211156679-085fa3e7-1b9b-458c-81fc-26df62773e3a.gif)
 
-Step 18: 
+Step 18: Time to open Powershell to run the script. On the Desktop, click Start < Select < Windows PowerShell < Right-click Windows PowerShell ISE < More < Run as Adminstrator. Alternatively, the search function can be used as well to find it. In Powershell, click Open < locate and click 1_CREATE_USERS file < Open. To run the script, we first have to authorize Powershell to run as it will throw a security error. In the command line type "Set-ExecutionPolicy Unrestricted" < Enter on keyboard. Click 'Yes to all' when confirmation prompt appears. After, run the script using the run button in Powershell (green play button). Powrshell should show users being created designed by first initial, last name like image below.
+![Powershell](https://user-images.githubusercontent.com/121698544/211157337-3e9012e2-c71f-49e8-bb51-1f5838c82538.gif)
+![Win2019usercreation](https://user-images.githubusercontent.com/121698544/211157371-6721b4f9-45c4-48f7-86b4-70a51ce0d9ed.png)
+
+
 
 <br />
 <br />
